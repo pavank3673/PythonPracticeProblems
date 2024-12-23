@@ -8,18 +8,18 @@ win_count = 0
 bet_count = 0
 i = 1
 
-while(i <= n):
+while(n > 0):
     if stake == 0 or stake == goal:
         break
-    bets = 1
+    bet_amount = 1
     bet_count += 1
     bet_result = randint(0, 1)
     if bet_result == 1:
         win_count += 1
-        stake = stake + bets
+        stake = stake + bet_amount
     else:
-        stake = stake - bets
-    i += 1
+        stake = stake - bet_amount
+    n -= 1
 
 win_percentage = (win_count / bet_count) * 100
 loss_percentage = 100 - win_percentage
